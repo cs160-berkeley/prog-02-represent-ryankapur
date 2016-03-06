@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:gravity="center" android:layout_gravity="center"
+    tools:context=".MainActivity" android:orientation="vertical" tools:deviceIds="wear_round"
+    android:background="#ffffff"
+    android:weightSum="1">
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Represent!"
+        android:id="@+id/represent_title"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000AA0"
+        android:typeface="sans"
+        android:textSize="11sp" />
+
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:id="@+id/img"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/name"
+        android:text="Example Name "
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/zip"
+        android:layout_gravity="center_horizontal"
+        android:text="zip"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/type"
+        android:layout_gravity="center_horizontal"
+        android:text="type"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/party"
+        android:layout_gravity="center_horizontal"
+        android:text="party"
+        android:textColor="#000000" />
+
+    <Button
+        android:layout_width="111dp"
+        android:layout_height="30dp"
+        android:text="More Info"
+        android:id="@+id/main_zip_btn"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.10"
+        android:onClick="goToVote" />
+
+
+</LinearLayout>
+

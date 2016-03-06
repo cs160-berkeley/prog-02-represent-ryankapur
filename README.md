@@ -4,11 +4,11 @@ Briefly describe your app here.
 
 ## Authors
 
-FirstName LastName ([your_email@berkeley.edu](mailto:your_email@berkeley.edu))
+FirstName LastName ([ryankapur@berkeley.edu](mailto:ryankapur@berkeley.edu))
 
 ## Demo Video
 
-See [your demo video title here] (https://link_to_your_video)
+See [Represent] (https://youtu.be/5P5OORgY3to)
 
 ## Screenshots
 
@@ -17,4 +17,7 @@ See [your demo video title here] (https://link_to_your_video)
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
-* Any other support
+-Leo LeBlanc helped me debug 2D Picker!
+-Catnip starter code (statff)
+-Listview Tutorial (Youtube: SlideNerd)
+

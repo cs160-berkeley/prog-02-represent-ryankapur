@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Represent!</string>
+    <string-array name="titles">
+        <item>Jeff Merkley</item>
+        <item>Rob Wyden</item>
+        <item>Suzanne Bonamici</item>
+    </string-array>
+    <string-array name="descriptions">
+        <item>Democrat</item>
+        <item>Democrat</item>
+        <item>Democrat</item>
+    </string-array>
+    <string name="google_app_id">240042412916</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>
