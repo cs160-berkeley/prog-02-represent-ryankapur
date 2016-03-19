@@ -1,6 +1,6 @@
 # PROG 02: Represent!
 
-Briefly describe your app here.
+Represent! is an Android App tested for Nexuss 5 that communicates with a Moto360 Watch. Based on location, one's relevant congressional information can be viewed and interpreted.
 
 ## Authors
 
