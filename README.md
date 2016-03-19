@@ -4,7 +4,7 @@ Represent! is an Android App tested for Nexuss 5 that communicates with a Moto36
 
 ## Authors
 
-Ryan Kapur [ryankapur@berkeley.edu](mailto:ryankapur@berkeley.edu)
+[ryankapur@berkeley.edu](mailto:ryankapur@berkeley.edu)
 
 ## Demo Video
 
