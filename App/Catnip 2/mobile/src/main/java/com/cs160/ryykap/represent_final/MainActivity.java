@@ -3,14 +3,16 @@ package com.cs160.ryykap.represent_final;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Html;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -23,7 +25,6 @@ public class MainActivity extends Activity {
     private Button fLocationButton;
     private Button mLexyButton;
     private static final String START_ACTIVITY = "/start_activity";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,31 +32,52 @@ public class MainActivity extends Activity {
         initGoogleApiClient();
 
         //set action bar color
-        ActionBar bar = getActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#2F5653")));
+//        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#CFD8DC")));
 
-        fLocationButton = (Button) findViewById(R.id.fred_btn);
-        mLexyButton = (Button) findViewById(R.id.lexy_btn);
+        //set Action Bar's background to black and white flag image
+        ActionBar actionBar = getActionBar();
+        Drawable d=getResources().getDrawable(R.drawable.flag_black);
+        getActionBar().setBackgroundDrawable(d);
+        actionBar.setTitle(Html.fromHtml("<font color='#FBE9E7'>Represent </font>"));
 
-        fLocationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //sending fred to the watch
-                Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
-                sendIntent.putExtra("CAT_NAME", "Fred");
-                startService(sendIntent);
-            }
-        });
 
-        mLexyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //sending lexy to the watch
-                Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
-                sendIntent.putExtra("CAT_NAME", "Lexy");
-                startService(sendIntent);
-            }
-        });
+        //put logo on LHS
+        //http://stackoverflow.com/questions/21178860/how-to-add-imageview-on-right-hand-side-of-action-bar
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        ImageView imageView = new ImageView(actionBar.getThemedContext());
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.logo);
+        ActionBar.LayoutParams layoutParams = new ActionBar.LayoutParams(
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                ActionBar.LayoutParams.WRAP_CONTENT, Gravity.LEFT
+                | Gravity.CENTER_VERTICAL);
+        layoutParams.leftMargin = 0;
+        imageView.setLayoutParams(layoutParams);
+        actionBar.setCustomView(imageView);
+
+
+//        fLocationButton = (Button) findViewById(R.id.fred_btn);
+//        mLexyButton = (Button) findViewById(R.id.lexy_btn);
+//
+//        fLocationButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //sending fred to the watch
+//                Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
+//                sendIntent.putExtra("CAT_NAME", "Fred");
+//                startService(sendIntent);
+//            }
+//        });
+//
+//        mLexyButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //sending lexy to the watch
+//                Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
+//                sendIntent.putExtra("CAT_NAME", "Lexy");
+//                startService(sendIntent);
+//            }
+//        });
     }
 
     //Switch to Congressional view based upon inputted zip code
@@ -88,7 +110,7 @@ public class MainActivity extends Activity {
         EditText zip = (EditText) findViewById(R.id.zip_enter);
         String zip_str = zip.getText().toString();
         Intent startNewActivity = new Intent(this, CongressionalActivity.class);
-        startNewActivity.putExtra("inputted_zipcode", "97005"); //DUMMY
+        startNewActivity.putExtra("inputted_zipcode", "94704"); //DUMMY
 //
 //        //Sending ZIP to Wear
 //        Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);

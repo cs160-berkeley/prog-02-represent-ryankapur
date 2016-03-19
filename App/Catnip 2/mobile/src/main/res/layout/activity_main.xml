@@ -23,52 +23,50 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="86dp"
+        android:layout_height="152dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Please click on the location button to get started or enter a zip code to receive customized US representative information!"
+        android:text="Please click on the location button to get started or enter a zip code to view corresponding US Senators and Representatives!"
         android:id="@+id/welcome_info_text"
         style="@style/Base.Animation.AppCompat.Dialog" />
 
     <ImageView
-        android:layout_width="104dp"
-        android:layout_height="130dp"
+        android:layout_width="142dp"
+        android:layout_height="126dp"
         android:id="@+id/loc_img"
         android:src="@drawable/location_image"
         android:onClick="goToGeoCongressional"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_weight="0.43" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location Fred"
-        android:id="@+id/fred_btn"
-        android:layout_below="@+id/lexy_img"
-        android:layout_alignParentStart="true" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Use Current Location"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:textSize="10dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Secondary Button Lexy"
-        android:id="@+id/lexy_btn"
-        android:layout_alignBottom="@+id/fred_btn"
-        android:layout_alignStart="@+id/lexy_img"
-        android:layout_alignEnd="@+id/lexy_img" />
-
-    <LinearLayout
+    <RelativeLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="378dp"
+        android:layout_centerInParent="true"
+        android:layout_height="236dp">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/zip_enter"
-            android:hint="Enter Zipcode"
+            android:hint="  Enter"
             android:phoneNumber="false"
             android:maxLength="5"
-            android:maxLines="1" />
+            android:maxLines="1"
+
+            android:textAlignment="center"
+            android:layout_alignBottom="@+id/zip_button"
+            android:layout_toStartOf="@+id/zip_button" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -76,8 +74,11 @@
             android:layout_height="wrap_content"
             android:text="ZIP"
             android:onClick="goToCongressional"
-            android:id="@+id/zip_button" />
+            android:id="@+id/zip_button"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="150dp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

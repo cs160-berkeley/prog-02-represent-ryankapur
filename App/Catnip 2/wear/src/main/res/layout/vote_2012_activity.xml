@@ -81,7 +81,8 @@
             android:contentDescription="obamaa"
             android:layout_height="77dp"
             android:id="@+id/obama"
-            android:background="@drawable/obama"/>
+            android:background="@drawable/obama"
+           />
 
         <ImageView
             android:layout_width="24dp"

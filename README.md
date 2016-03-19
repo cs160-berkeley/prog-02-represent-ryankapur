@@ -4,11 +4,11 @@ Briefly describe your app here.
 
 ## Authors
 
-FirstName LastName ([ryankapur@berkeley.edu](mailto:ryankapur@berkeley.edu))
+Ryan Kapur ([ryankapur@berkeley.edu](mailto:ryankapur@berkeley.edu))
 
 ## Demo Video
 
-See [Represent] (https://youtu.be/5P5OORgY3to)
+See [Represent] (https://www.youtube.com/watch?v=NdrhvNM8vfM&feature=youtu.be)
 
 ## Screenshots
 
@@ -17,7 +17,7 @@ See [Represent] (https://youtu.be/5P5OORgY3to)
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
--Leo LeBlanc helped me debug 2D Picker!
--Catnip starter code (statff)
--Listview Tutorial (Youtube: SlideNerd)
+* -Leo LeBlanc helped me debug 2D Picker!
+* -Catnip starter code (statff)
+* -http://stackoverflow.com/questions/1359689/how-to-send-http-request-in-java
 

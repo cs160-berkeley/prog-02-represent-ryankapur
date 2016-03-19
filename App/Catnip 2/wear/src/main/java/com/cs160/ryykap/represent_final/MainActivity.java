@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-//WEAR
-
 public class MainActivity extends Activity {
 
     private TextView mTextView;

@@ -19,6 +19,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 
 public class CongressionalActivity extends Activity {
 
@@ -36,16 +43,53 @@ public class CongressionalActivity extends Activity {
         setContentView(R.layout.activity_congressional);
         TextView header = (TextView) findViewById(R.id.zip_header);
 
+
         Intent intent = getIntent();
         String zip = intent.getStringExtra("inputted_zipcode");
+        String urlStringPart1 = "https://congress.api.sunlightfoundation.com/legislators/locate?zip=";
+        String urlStringPart2 = urlStringPart1 + zip + "&apikey=a7a6e2460dbe43d7abef25cfa5a408d9";
         header.setText("Zip: " + zip); //set the header's text to inputted zip
         Resources res = getResources();
         reps = res.getStringArray(R.array.titles); //TODO: dont use XML strings; use an array to ease into part C
         description1 = res.getStringArray(R.array.descriptions);
 
+
+
         final ListView l = (ListView) findViewById(R.id.congressionalListView);
         cAdapter adpt = new cAdapter(this, reps, images, description1, tweets, types);
         l.setAdapter(adpt);
+
+
+        HttpURLConnection connection = null;
+        try {
+            URL url = new URL(urlStringPart2);
+            connection = (HttpURLConnection)url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Content-type", "application/json");
+            connection.setUseCaches(false);
+            connection.setDoOutput(true);
+
+            //Send request
+            DataOutputStream wr = new DataOutputStream (
+                    connection.getOutputStream());
+            wr.close();
+            InputStream in = connection.getInputStream();
+            InputStreamReader reader = new InputStreamReader(in);
+            BufferedReader buffBro = new BufferedReader(reader);
+            String currLine = null;
+            currLine = buffBro.readLine();
+            while (currLine != null) {
+                Log.d(currLine, "");
+            }
+            header.setText("Zip: " + currLine); //TEST
+
+        } catch (Exception e) {
+            Log.d(e.toString(), "");
+//            header.setText("fail " + e.toString()); //TEST
+
+        }
+
+
 
         //Go to Detailed view based on this onClick listener of the list view
         l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
